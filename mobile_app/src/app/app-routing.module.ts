@@ -4,24 +4,24 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'master',
+    redirectTo: 'menu',
     pathMatch: 'full',
   },
-  {
-    path: 'sign-in',
-    loadChildren: () =>
-      import('./views/sign-in/sign-in.module').then((m) => m.SignInPageModule),
-  },
-  {
-    path: 'master',
-    loadChildren: () =>
-      import('./views/master/master.module').then((m) => m.MasterPageModule),
-  },
-  {
-    path: 'master/:id',
-    loadChildren: () =>
-      import('./views/detail/detail.module').then((m) => m.DetailPageModule),
-  },
+  // {
+  //   path: 'sign-in',
+  //   loadChildren: () =>
+  //     import('./views/sign-in/sign-in.module').then((m) => m.SignInPageModule),
+  // },
+  // {
+  //   path: 'master',
+  //   loadChildren: () =>
+  //     import('./views/master/master.module').then((m) => m.MasterPageModule),
+  // },
+  // {
+  //   path: 'master/:id',
+  //   loadChildren: () =>
+  //     import('./views/detail/detail.module').then((m) => m.DetailPageModule),
+  // },
   {
     path: 'menu',
     loadChildren: () =>
