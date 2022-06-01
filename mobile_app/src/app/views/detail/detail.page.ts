@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { MasterService } from 'src/app/services/master.service';
 
 @Component({
   selector: 'app-detail',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private masterService: MasterService
+  ) {}
 
   ngOnInit() {
+    const name = this.route.snapshot.paramMap.get('id');
+    console.log(name);
+    this.masterService
+      .getRedditPostDetail(name)
+      .subscribe((res) => console.log(res));
   }
-
 }

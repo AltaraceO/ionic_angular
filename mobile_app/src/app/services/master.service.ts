@@ -15,8 +15,7 @@ export class MasterService {
       map((res: any) => {
         console.log();
         return res.data.children.map((el: any) => {
-          console.log();
-          return {
+          const newObj = {
             author: el.data.author,
             name: el.data.name,
             smallImg: el.data.preview.images[0].resolutions[0].url,
@@ -25,6 +24,7 @@ export class MasterService {
             thumb: el.data.thumbnail,
             upvote: el.data.upvote_ratio,
           };
+          return newObj;
         });
       })
     );
