@@ -49,8 +49,8 @@ export class MasterService {
     );
   }
 
-  getUrl = (imgUrl) => {
-    if (imgUrl === 'undefined') {
+  getUrl = (imgUrl: string) => {
+    if (!imgUrl) {
       return imgUrl;
     }
     const encoded = imgUrl.replace('amp;s', 's');
