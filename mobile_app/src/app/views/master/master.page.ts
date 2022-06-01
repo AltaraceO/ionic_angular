@@ -26,7 +26,7 @@ export class MasterPage implements OnInit {
 
     this.masterService.getRedditPosts().subscribe((res) => {
       load.dismiss();
-      this.posts = res.data.children;
+      this.posts = res;
       console.log(this.posts);
     });
   }
