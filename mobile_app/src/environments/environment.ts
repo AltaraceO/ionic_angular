@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  redditBaseUrl: 'https://www.reddit.com/r/aww.json?raw_json=1',
+  redditBaseUrl: 'https://www.reddit.com/r/Images.json?raw_json=1',
   redditDetailUrl: 'https://www.reddit.com/by_id/',
   thumbsUpReddit: 'https://i.redd.it/lcm7fe9bnib61.png',
 };

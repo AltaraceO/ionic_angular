@@ -14,5 +14,17 @@
     <ion-item *ngIf="!post.largeImg">
       <img [src]="thumbsUp" alt="large" />
     </ion-item>
+    <ion-header>
+      <ion-card-title>{{post.title}}</ion-card-title>
+
+      <ion-item>
+        <ion-icon name="arrow-up-outline"></ion-icon>
+        <ion-label>Post UpVote Ratio is - {{post.upvote}}</ion-label>
+      </ion-item>
+    </ion-header>
   </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="goToLink()">Go To Link</ion-button>
+</ion-footer>

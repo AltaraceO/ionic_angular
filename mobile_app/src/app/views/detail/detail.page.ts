@@ -24,4 +24,8 @@ export class DetailPage implements OnInit {
       console.log(this.post);
     });
   }
+
+  goToLink() {
+    window.open(this.post.url);
+  }
 }

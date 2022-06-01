@@ -18,12 +18,13 @@ export class MasterService {
           const newObj = {
             author: el.data.author,
             name: el.data.name,
-            smallImg: el.data.preview.images[0].resolutions[0].url,
-            largeImg: el.data.preview.images[0].resolutions[4]?.url,
+            smallImg: el.data.preview?.images[0].resolutions[0].url,
+            largeImg: el.data.preview?.images[0].resolutions[4]?.url,
             title: el.data.title,
             thumb: el.data.thumbnail,
             upvote: el.data.upvote_ratio,
           };
+
           return newObj;
         });
       })
@@ -43,6 +44,7 @@ export class MasterService {
           url: item.url,
           largeImg: unescapedImage,
           author: item.author,
+          upvote: item.upvote_ratio,
         };
         return newObj;
       })
