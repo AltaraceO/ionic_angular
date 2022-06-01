@@ -18,7 +18,7 @@ const routes: Routes = [
       import('./views/master/master.module').then((m) => m.MasterPageModule),
   },
   {
-    path: 'detail',
+    path: 'master/:id',
     loadChildren: () =>
       import('./views/detail/detail.module').then((m) => m.DetailPageModule),
   },

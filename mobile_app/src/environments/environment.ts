@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  redditBaseUrl: 'https://www.reddit.com/r/aww.json?raw_json=1',
 };
 
 /*
