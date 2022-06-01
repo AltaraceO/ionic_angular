@@ -31,6 +31,16 @@ export class MasterService {
   }
 
   getRedditPostDetail(name: string) {
-    return this.http.get(`${environment.redditDetailUrl}${name}/.json`);
+    return this.http.get(`${environment.redditDetailUrl}${name}/.json`).pipe(
+      map((res: any) => {
+        const item = res.data.children[0].data;
+        const newObj = {
+          title: item.title,
+          url: item.url,
+          largeImg: item.preview.images[0].resolutions[4]?.url,
+        };
+        return newObj;
+      })
+    );
   }
 }
