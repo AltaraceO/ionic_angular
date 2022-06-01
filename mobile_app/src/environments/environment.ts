@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   redditBaseUrl: 'https://www.reddit.com/r/aww.json?raw_json=1',
+  redditDetailUrl: 'https://www.reddit.com/by_id/',
 };
 
 /*

@@ -13,5 +13,7 @@ export class MasterService {
     return this.http.get(`${environment.redditBaseUrl}`);
   }
 
-  getRedditPostDetail() {}
+  getRedditPostDetail(name: string) {
+    return this.http.get(`${environment.redditDetailUrl}${name}/.json`);
+  }
 }

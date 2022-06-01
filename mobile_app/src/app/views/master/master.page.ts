@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { MasterService } from 'src/app/services/master.service';
 @Component({
   selector: 'app-master',
@@ -6,9 +7,26 @@ import { MasterService } from 'src/app/services/master.service';
   styleUrls: ['./master.page.scss'],
 })
 export class MasterPage implements OnInit {
-  constructor(private masterService: MasterService) {}
+  posts = [];
+  constructor(
+    private masterService: MasterService,
+    private loading: LoadingController
+  ) {}
 
   ngOnInit() {
-    this.masterService.getRedditPosts().subscribe((res) => console.log(res));
+    this.loadPosts();
+  }
+
+  async loadPosts() {
+    const load = await this.loading.create({
+      message: 'Loading...',
+      spinner: 'dots',
+    });
+    await load.present();
+
+    this.masterService.getRedditPosts().subscribe((res) => {
+      load.dismiss();
+      console.log(res);
+    });
   }
 }
