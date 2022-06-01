@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detail</ion-title>
+    <ion-title>{{post?.author}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/master"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <img [src]="post?.largeImg" alt="large" />
+  </ion-card>
 </ion-content>

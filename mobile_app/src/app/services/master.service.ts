@@ -34,13 +34,28 @@ export class MasterService {
     return this.http.get(`${environment.redditDetailUrl}${name}/.json`).pipe(
       map((res: any) => {
         const item = res.data.children[0].data;
+        console.log('item', item);
+        const unescapedImage = this.getUrl(
+          item.preview.images[0].resolutions[4]?.url
+        );
         const newObj = {
           title: item.title,
           url: item.url,
-          largeImg: item.preview.images[0].resolutions[4]?.url,
+          largeImg: unescapedImage,
+          author: item.author,
         };
         return newObj;
       })
     );
   }
+
+  getUrl = (imgUrl) => {
+    if (imgUrl === 'undefined') {
+      return imgUrl;
+    }
+    const encoded = imgUrl.replace('amp;s', 's');
+    const doubleEncoded = encoded.replace('amp;', '');
+    const tripleEncoded = doubleEncoded.replace('amp;', '');
+    return tripleEncoded;
+  };
 }
