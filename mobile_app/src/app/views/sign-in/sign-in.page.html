@@ -8,6 +8,7 @@
   <ion-list>
     <ion-item>
       <ion-label fixed> Username</ion-label>
+      <!-- ngModel - like value in React - creates a controlled component -->
       <ion-input type="text" [(ngModel)]="user.name"></ion-input>
     </ion-item>
     <ion-item>
@@ -15,5 +16,8 @@
       <ion-input type="password" [(ngModel)]="user.pw"></ion-input>
     </ion-item>
   </ion-list>
-  <ion-button expand="full" (click)="userLogin()">Login</ion-button>
+  <!-- automatically navigates to master -->
+  <ion-button expand="full" (click)="userLogin()" routerLink="/menu/master"
+    >Login</ion-button
+  >
 </ion-content>

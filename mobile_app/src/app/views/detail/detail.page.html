@@ -1,5 +1,6 @@
 <ion-header>
   <ion-toolbar>
+    <!-- conditional chaining because the post is initially null -->
     <ion-title>{{post?.author}}</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/master"></ion-back-button>
@@ -9,8 +10,10 @@
 
 <ion-content>
   <ion-card *ngIf="post">
+    <!-- if an image in the post object is not undefined show it -->
     <img *ngIf="post.largeImg" [src]="post.largeImg" alt="large" />
 
+    <!-- otherwise, show the image that is linked in the environments -->
     <ion-item *ngIf="!post.largeImg">
       <img [src]="thumbsUp" alt="large" />
     </ion-item>

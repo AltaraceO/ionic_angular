@@ -17,14 +17,15 @@ export class DetailPage implements OnInit {
   ) {}
 
   ngOnInit() {
+    //*this takes the ID (post name) sent from MASTER gets it out of the active route
     const name = this.route.snapshot.paramMap.get('id');
-    console.log(this.thumbsUp);
+    //*and uses it for the individual post sent to Reddit - result coming back gets assigned to post which will be used in the HTML
     this.masterService.getRedditPostDetail(name).subscribe((res) => {
       this.post = res;
-      console.log(this.post);
     });
   }
 
+  //*leave the app, doesn't seem to require _blank...
   goToLink() {
     window.open(this.post.url);
   }

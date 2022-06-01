@@ -35,7 +35,7 @@ export class MasterService {
     return this.http.get(`${environment.redditDetailUrl}${name}/.json`).pipe(
       map((res: any) => {
         const item = res.data.children[0].data;
-        console.log('item', item);
+        // console.log('item', item);
         const unescapedImage = this.getUrl(
           item.preview.images[0].resolutions[4]?.url
         );
@@ -51,6 +51,7 @@ export class MasterService {
     );
   }
 
+  //*gets rid of all the encoding on large images coming in from reddit!
   getUrl = (imgUrl: string) => {
     if (!imgUrl) {
       return imgUrl;

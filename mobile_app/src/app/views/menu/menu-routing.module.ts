@@ -12,6 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: MenuPage,
+    // *menu's children will get routed through menu. the paths are listed in the pages array in the TS file in this folder
     children: [
       {
         path: 'sign-in',

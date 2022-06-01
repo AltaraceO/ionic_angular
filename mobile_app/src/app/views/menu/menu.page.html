@@ -8,12 +8,18 @@
 
     <ion-content>
       <ion-list>
+        <!-- loops through the pages array and dynamically forms links and routes - selectedPath comparison returns true or false for active class -->
         <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
-          <ion-item [routerLink]="page.url"> {{page.title}} </ion-item>
+          <ion-item
+            [routerLink]="page.url"
+            [class.active-item]="selectedPath ===page.url"
+          >
+            {{page.title}}
+          </ion-item>
         </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
-
+  <!-- split pane, menu and router outlet have to share the same id -->
   <ion-router-outlet id="content"></ion-router-outlet>
 </ion-split-pane>

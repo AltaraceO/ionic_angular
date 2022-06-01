@@ -18,6 +18,7 @@ export class MasterPage implements OnInit {
   }
 
   async loadPosts() {
+    //*LoadingCOntroller returns a promise - therefore async await
     const load = await this.loading.create({
       message: 'Loading...',
       spinner: 'dots',
@@ -26,9 +27,9 @@ export class MasterPage implements OnInit {
 
     this.masterService.getRedditPosts().subscribe((res) => {
       load.dismiss();
+      //*first item was always an issue so removed it before moving forward
       res.shift();
       this.posts = res;
-      console.log(this.posts);
     });
   }
 }
