@@ -51,6 +51,7 @@
   </form>
 </ion-content>
 
+<!-- this is the alternative content page that will display once the user is logged in and will prompt them to logout and show the current email address -->
 <ion-content *ngIf="user.valueUser()">
   <h3 class="ion-text-center">Log out of {{formItems.value.email}}</h3>
   <ion-button expand="block" (click)="userLogOut()">Logout</ion-button>
@@ -67,6 +68,3 @@
     Sign in with GitHub
   </ion-button>
 </ion-footer>
-
-<!-- 
-&& formItems.get('email').errors?.email -->

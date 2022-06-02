@@ -16,11 +16,6 @@ export class UserService {
 
   constructor() {}
 
-  //this enables seeing if there is a current user of if it is null
-  currentUser(): Observable<User | null> {
-    return this.user$;
-  }
-
   //this returns the user and its value
   valueUser(): User | null {
     return this.user$.value;
