@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 export class SignInPage implements OnInit {
   formItems: FormGroup;
 
-  constructor(private fb: FormBuilder, private user: UserService) {}
+  constructor(private fb: FormBuilder, public user: UserService) {}
 
   ngOnInit() {
     //this builds a form with two items (email,password) and runs the validations on it - call connected in HTML
