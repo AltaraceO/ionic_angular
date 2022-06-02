@@ -4,7 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- only display this content when there is no user is null -->
+<ion-content *ngIf="!user.valueUser()">
   <!-- form group lets the form builder know which item is connected at which form control name -->
   <form [formGroup]="formItems">
     <ion-list>
@@ -49,6 +50,8 @@
     >
   </form>
 </ion-content>
+
+<ion-content *ngIf="user.valueUser()"> this is here </ion-content>
 
 <ion-footer>
   <ion-button expand="block">
