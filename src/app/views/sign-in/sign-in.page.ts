@@ -30,6 +30,9 @@ export class SignInPage implements OnInit {
   updateCurrent(): void {
     this.user.updateUser(this.formItems.value);
   }
+  removeCurrent(): void {
+    this.user.updateUser(null);
+  }
 
   userLogin() {
     console.log('loggedIn');
@@ -37,5 +40,9 @@ export class SignInPage implements OnInit {
 
     this.updateCurrent();
     console.log(this.user.valueUser());
+  }
+
+  userLogOut() {
+    this.removeCurrent();
   }
 }

@@ -51,7 +51,10 @@
   </form>
 </ion-content>
 
-<ion-content *ngIf="user.valueUser()"> this is here </ion-content>
+<ion-content *ngIf="user.valueUser()">
+  <h3 class="ion-text-center">Log out of {{formItems.value.email}}</h3>
+  <ion-button expand="block" (click)="userLogOut()">Logout</ion-button>
+</ion-content>
 
 <ion-footer>
   <ion-button expand="block">
