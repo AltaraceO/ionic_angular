@@ -10,7 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class DetailPage implements OnInit {
   post = null;
-  thumbsUp = environment.thumbsUpReddit;
+  // thumbsUp = environment.thumbsUpReddit;
+  thumbsUp = 'https://i.redd.it/lcm7fe9bnib61.png';
   constructor(
     private route: ActivatedRoute,
     private masterService: MasterService
