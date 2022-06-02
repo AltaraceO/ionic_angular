@@ -33,5 +33,6 @@ export class SignInPage implements OnInit {
   //called when logout button is clicked and clears the user data
   userLogOut() {
     this.removeCurrent();
+    this.formItems.reset();
   }
 }
