@@ -30,7 +30,15 @@ export class ChatPage implements OnInit {
     this.currentUser = 'bit';
   }
 
-  sendMsg() {}
+  sendMessage() {
+    if (this.newMessage === undefined) {
+      return;
+    }
 
-  sendMessage() {}
+    this.messages.push({
+      user: this.currentUser,
+      time: new Date().getTime(),
+      text: this.newMessage,
+    });
+  }
 }
