@@ -10,10 +10,53 @@
 <ion-content>
   <ion-grid>
     <ion-row *ngFor="let msg of messages">
-      <ion-col size="12">
-        <b>{{msg.user}}</b>
+      <ion-col
+        size="9"
+        *ngIf="currentUser !== msg.user"
+        class="message bot-message"
+      >
+        <b>{{msg.user}}</b><br />
         <span>{{msg.text}}</span>
+        <div class="time ion-text-right">{{msg.time | date:'short'}}</div>
+      </ion-col>
+
+      <ion-col
+        offset="3"
+        size="9"
+        *ngIf="currentUser === msg.user"
+        class="message user-message"
+      >
+        <b>{{msg.user}}</b><br />
+        <span>{{msg.text}}</span>
+        <div class="time ion-text-right">{{msg.time | date:'short'}}</div>
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row class="ion-align-items-center ion-no-padding">
+      <ion-col size="10">
+        <textarea
+          autosize
+          maxRows="4"
+          [(ngModel)]="newMessage"
+          class="message-input"
+        ></textarea>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button
+          expands="block"
+          fill="clear"
+          color="primary"
+          [disabled]="newMessage===''"
+          class="msg-btn"
+          (click)="sendMessage"
+        >
+          <ion-icon name="paper-plane-sharp" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

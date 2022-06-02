@@ -13,14 +13,24 @@ export class ChatPage implements OnInit {
       time: 1654176594,
       text: 'Welcome to our chat, what would you like to share?',
     },
+    {
+      user: 'bit',
+      time: 1654176594,
+      text: 'Welcome to our chat, what would you like to share?',
+    },
   ];
+
+  newMessage: string;
   currentUser: string;
   constructor(private user: UserService) {}
 
   ngOnInit() {
-    this.currentUser = this.user.valueUser()?.email;
-    console.log(this.currentUser);
+    // this.currentUser = this.user.valueUser()?.email;
+    // console.log(this.currentUser);
+    this.currentUser = 'bit';
   }
 
   sendMsg() {}
+
+  sendMessage() {}
 }
