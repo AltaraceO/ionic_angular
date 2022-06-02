@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,30 +7,17 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./sign-in.page.scss'],
 })
 export class SignInPage implements OnInit {
-  credentials: FormGroup;
-  // user = {
-  //   name: 'test',
-  //   pw: 'test',
-  // };
-  constructor(
-    private fb: FormBuilder,
-    private alertController: AlertController
-  ) {}
+  formItems: FormGroup;
+
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.credentials = this.fb.group({
-      email: ['ori@ori.com', [Validators.required, Validators.email]],
-      password: ['ori', [Validators.required, Validators.minLength(3)]],
+    //this builds a form with two items (email,password) and runs the validations on it - call connected in HTML
+    this.formItems = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
-
-  // get email(){
-  //   return this.credentials.get('email')
-  // }
-
-  // get password(){
-  //   return this.credentials.get('password')
-  // }
 
   userLogin() {
     console.log('loggedin');
