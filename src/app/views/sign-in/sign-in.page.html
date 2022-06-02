@@ -16,6 +16,13 @@
         ></ion-input>
       </ion-item>
 
+      <ion-label
+        color="danger"
+        *ngIf="formItems.get('email').touched && formItems.get('email').errors "
+      >
+        Please enter a valid email
+      </ion-label>
+
       <ion-item>
         <ion-input
           placeholder="password"
@@ -24,6 +31,13 @@
         ></ion-input>
       </ion-item>
     </ion-list>
+
+    <ion-label
+      color="danger"
+      *ngIf="formItems.get('password').touched && formItems.get('password').errors "
+    >
+      Password must be 6 characters long
+    </ion-label>
 
     <!-- Button stays disabled until all the items passed the validation - once clicked automatically navigates to master -->
     <ion-button
@@ -47,3 +61,6 @@
     Sign in with GitHub
   </ion-button>
 </ion-footer>
+
+<!-- 
+&& formItems.get('email').errors?.email -->
