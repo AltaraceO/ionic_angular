@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-chat',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
-
-  constructor() { }
+  messages = [
+    {
+      user: 'bot',
+      time: 1654176594,
+      text: 'Welcome to our chat, what would you like to share?',
+    },
+  ];
+  currentUser: string;
+  constructor(private user: UserService) {}
 
   ngOnInit() {
+    this.currentUser = this.user.valueUser()?.email;
+    console.log(this.currentUser);
   }
 
+  sendMsg() {}
 }

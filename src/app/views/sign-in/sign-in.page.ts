@@ -15,8 +15,8 @@ export class SignInPage implements OnInit {
   ngOnInit() {
     //*this builds a form with two items (email,password) and runs the validations on it - call connected in HTML
     this.formItems = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      email: ['a@a', [Validators.required, Validators.email]],
+      password: ['eeeeee', [Validators.required, Validators.minLength(6)]],
     });
   }
 

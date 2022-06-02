@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>chat</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Chat</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row *ngFor="let msg of messages">
+      <ion-col size="12">
+        <b>{{msg.user}}</b>
+        <span>{{msg.text}}</span>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
