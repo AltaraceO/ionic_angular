@@ -3,7 +3,8 @@
     <!-- conditional chaining because the post is initially null -->
     <ion-title>{{post?.author}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/master"></ion-back-button>
+      <!-- Back button - if the page is refreshed and removes the history it goes to MASTER by default -->
+      <ion-back-button defaultHref="/menu/master"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

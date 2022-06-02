@@ -5,19 +5,56 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item>
-      <ion-label fixed> Username</ion-label>
-      <!-- ngModel - like value in React - creates a controlled component -->
-      <ion-input type="text" [(ngModel)]="user.name"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label fixed> Password</ion-label>
-      <ion-input type="password" [(ngModel)]="user.pw"></ion-input>
-    </ion-item>
-  </ion-list>
-  <!-- automatically navigates to master -->
-  <ion-button expand="full" (click)="userLogin()" routerLink="/menu/master"
-    >Login</ion-button
-  >
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-input
+          formControlName="email"
+          placeholder="Email"
+          type="email"
+        ></ion-input>
+      </ion-item>
+
+      <div
+        *ngIf="(email.dirty || email.touched) && email.errors"
+        class="errors"
+      >
+        <span *ngIf="email.errors?.required">Email is required</span>
+        <span *ngIf="(email.errors?.email)">Email is invalid</span>
+      </div>
+
+      <ion-item>
+        <ion-input
+          placeholder="password"
+          formControlName="password"
+          type="password"
+        ></ion-input>
+      </ion-item>
+
+      <div
+        *ngIf="(password.dirty || password.touched) && password.errors"
+        class="errors"
+      >
+        <span *ngIf="password.errors?.required">Password is required</span>
+        <span *ngIf="(password.errors?.minlength)">Password is invalid</span>
+      </div>
+    </ion-list>
+
+    <!-- automatically navigates to master -->
+    <ion-button expand="block" (click)="userLogin()" routerLink="/menu/master"
+      >Login</ion-button
+    >
+  </form>
 </ion-content>
+
+<ion-footer>
+  <ion-button expand="block">
+    <ion-icon name="logo-google" slot="start"></ion-icon>
+    Sign in with Google
+  </ion-button>
+
+  <ion-button expand="block">
+    <ion-icon name="logo-github" slot="start"></ion-icon>
+    Sign in with GitHub
+  </ion-button>
+</ion-footer>
