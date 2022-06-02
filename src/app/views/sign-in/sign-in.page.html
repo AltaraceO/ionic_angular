@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar class="ion-text-center">
     <ion-title *ngIf="user.valueUser()">Logout</ion-title>
     <ion-title *ngIf="!user.valueUser()">Sign-In</ion-title>
   </ion-toolbar>
@@ -9,7 +9,7 @@
 <ion-content *ngIf="!user.valueUser()">
   <!-- form group lets the form builder know which item is connected at which form control name -->
   <form [formGroup]="formItems">
-    <ion-list>
+    <ion-list class="ion-text-center">
       <ion-item>
         <ion-input
           formControlName="email"
@@ -32,17 +32,17 @@
           type="password"
         ></ion-input>
       </ion-item>
+      <ion-label
+        color="danger"
+        *ngIf="formItems.get('password').touched && formItems.get('password').errors "
+      >
+        Password must be 6 characters long
+      </ion-label>
     </ion-list>
-
-    <ion-label
-      color="danger"
-      *ngIf="formItems.get('password').touched && formItems.get('password').errors "
-    >
-      Password must be 6 characters long
-    </ion-label>
 
     <!-- Button stays disabled until all the items passed the validation - once clicked automatically navigates to master -->
     <ion-button
+      class="log-btn"
       [disabled]="!formItems.valid"
       expand="block"
       (click)="userLogin()"
@@ -55,16 +55,18 @@
 <!-- this is the alternative content page that will display once the user is logged in and will prompt them to logout and show the current email address -->
 <ion-content *ngIf="user.valueUser()">
   <h3 class="ion-text-center">Log out of {{formItems.value.email}}</h3>
-  <ion-button expand="block" (click)="userLogOut()">Logout</ion-button>
+  <ion-button class="log-btn" expand="block" (click)="userLogOut()"
+    >Logout</ion-button
+  >
 </ion-content>
 
 <ion-footer>
-  <ion-button expand="block">
+  <ion-button class="dummy-btns" expand="block">
     <ion-icon name="logo-google" slot="start"></ion-icon>
     Sign in with Google
   </ion-button>
 
-  <ion-button expand="block">
+  <ion-button class="dummy-btns" expand="block">
     <ion-icon name="logo-github" slot="start"></ion-icon>
     Sign in with GitHub
   </ion-button>
