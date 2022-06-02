@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MasterService } from 'src/app/services/master.service';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-detail',
@@ -10,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DetailPage implements OnInit {
   post = null;
-  // thumbsUp = environment.thumbsUpReddit;
+
   thumbsUp = 'https://i.redd.it/lcm7fe9bnib61.png';
   constructor(
     private route: ActivatedRoute,

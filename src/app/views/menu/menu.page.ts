@@ -11,9 +11,9 @@ export class MenuPage implements OnInit {
   //*In this folder's HTML these pages provide the dynamic list of buttons along with their addresses
   //* -- SIGNIN page title changes dynamically if a user is logged in
   pages = [
-    { title: 'Master Page', url: '/menu/master' },
-    { title: this.user.valueUser ? 'Logout' : 'Login', url: '/menu/sign-in' },
+    { title: 'Reddit Posts', url: '/menu/master' },
     { title: 'Chat', url: '/menu/chat' },
+    { title: this.user.valueUser ? 'Logout' : 'Login', url: '/menu/sign-in' },
   ];
 
   selectedPath = '';

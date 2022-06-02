@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-// import { environment } from 'src/environments/environment';
+
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -11,7 +11,6 @@ export class MasterService {
   constructor(private http: HttpClient) {}
 
   getRedditPosts(): Observable<any> {
-    // return this.http.get(`${environment.redditBaseUrl}`).pipe(
     return this.http
       .get('https://www.reddit.com/r/Images.json?raw_json=1')
       .pipe(
