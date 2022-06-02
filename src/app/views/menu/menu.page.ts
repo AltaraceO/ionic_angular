@@ -13,6 +13,7 @@ export class MenuPage implements OnInit {
   pages = [
     { title: 'Master Page', url: '/menu/master' },
     { title: this.user.valueUser ? 'Logout' : 'Login', url: '/menu/sign-in' },
+    { title: 'Chat', url: '/menu/chat' },
   ];
 
   selectedPath = '';

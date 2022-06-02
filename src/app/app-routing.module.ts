@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./views/menu/menu.module').then((m) => m.MenuPageModule),
   },
+  // {
+  //   path: 'chat',
+  //   loadChildren: () => import('./views/chat/chat.module').then( m => m.ChatPageModule)
+  // },
 ];
 
 @NgModule({
