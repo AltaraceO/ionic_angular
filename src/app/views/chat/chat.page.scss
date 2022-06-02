@@ -26,12 +26,13 @@
 }
 
 .message-input {
+  color: black;
   width: 100%;
   border: 1px solid var(--ion-color-medium);
   border-radius: 1rem;
   background: #fff;
   resize: none;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
 }
