@@ -13,6 +13,7 @@ export class MenuPage implements OnInit {
   pages = [
     { title: 'Reddit Posts', url: '/menu/master' },
     { title: 'Chat', url: '/menu/chat' },
+    { title: 'Stencil custom', url: '/menu/stencil' },
     { title: this.user.valueUser ? 'Logout' : 'Login', url: '/menu/sign-in' },
   ];
 

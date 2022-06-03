@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -11,6 +11,5 @@ import { MasterPage } from './master.page';
 @NgModule({
   imports: [CommonModule, FormsModule, IonicModule, MasterPageRoutingModule],
   declarations: [MasterPage],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MasterPageModule {}

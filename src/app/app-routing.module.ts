@@ -13,11 +13,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./views/menu/menu.module').then((m) => m.MenuPageModule),
   },
-  {
-    path: 'stencil',
-    loadChildren: () =>
-      import('./views/stencil/stencil.module').then((m) => m.StencilPageModule),
-  },
 ];
 
 @NgModule({
