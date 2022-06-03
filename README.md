@@ -12,7 +12,9 @@ The sign-in username and password inputs use a `FormBuilder`, `FormGroup`, `Vali
 
 Once a user is logged in, going back to the sign-up page only enables them to log out
 
-![SignIn](src/assets/images/sign-in.jpg "sign-in") | ![Validation](src/assets/images/validation.jpg "validation") | ![Validation](src/assets/images/logout.jpg "validation")
+<img src="src/assets/images/sign-in.jpg" alt="drawing" width="200"/> |<img src="src/assets/images/validation.jpg" alt="drawing" width="200"/>
+
+<!-- ![SignIn](src/assets/images/sign-in.jpg "sign-in") | ![Validation](src/assets/images/validation.jpg "validation") | ![Validation](src/assets/images/logout.jpg "validation") -->
 
 ## Menu
 
