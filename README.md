@@ -29,6 +29,7 @@ An empty path automatically redirects to the Menu - all routs are controlled in 
 ```
 
 <img src="src/assets/images/menu.jpg" alt="menu" width="150"/>
+
 ## Master
 
 The master list includes a menu button that toggles the menu open and highlights the current page.
@@ -59,7 +60,7 @@ Created as a separate app on **StencilJS** and published on **npm**, the stencil
 
 For more information on how to install this custom component on any app visit:
 
-[npm!](https://www.npmjs.com/package/initial-components-ori)
+[npm!](https://www.npmjs.com/package/initial-components-ori) `npm install initial-components-ori`
 
 [GitHub!](https://github.com/AltaraceO/stencil_components)
 
