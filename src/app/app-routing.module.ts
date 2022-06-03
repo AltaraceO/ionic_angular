@@ -15,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'stencil',
-    loadChildren: () => import('./views/stencil/stencil.module').then( m => m.StencilPageModule)
+    loadChildren: () =>
+      import('./views/stencil/stencil.module').then((m) => m.StencilPageModule),
   },
 ];
 
