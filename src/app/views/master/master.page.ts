@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { MasterService } from 'src/app/services/master.service';
+
 @Component({
   selector: 'app-master',
   templateUrl: './master.page.html',

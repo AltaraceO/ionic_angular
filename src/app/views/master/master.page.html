@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<!-- <ion-content>
   <ion-list>
     <ion-item button *ngFor="let post of posts" [routerLink]="[post.name]">
       <ion-avatar slot="start">
@@ -21,4 +21,9 @@
       <ion-badge class="badge">{{post.upvote}}</ion-badge>
     </ion-item>
   </ion-list>
-</ion-content>
+  
+</ion-content> -->
+
+<background-component urls="https://www.reddit.com/r/Images.json?raw_json=1">
+  hello
+</background-component>
