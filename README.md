@@ -12,9 +12,7 @@ The sign-in username and password inputs use a `FormBuilder`, `FormGroup`, `Vali
 
 Once a user is logged in, going back to the sign-up page only enables them to log out
 
-<img src="src/assets/images/sign-in.jpg" alt="drawing" width="200"/> |<img src="src/assets/images/validation.jpg" alt="drawing" width="200"/>
-
-<!-- ![SignIn](src/assets/images/sign-in.jpg "sign-in") | ![Validation](src/assets/images/validation.jpg "validation") | ![Validation](src/assets/images/logout.jpg "validation") -->
+<img src="src/assets/images/sign-in.jpg" alt="drawing" width="150"/> |<img src="src/assets/images/validation.jpg" alt="drawing" width="150"/>|<img src="src/assets/images/logout.jpg" alt="drawing" width="150"/>
 
 ## Menu
 
@@ -30,6 +28,7 @@ An empty path automatically redirects to the Menu - all routs are controlled in 
 ></ion-split-pane>
 ```
 
+<img src="src/assets/images/menu.jpg" alt="menu" width="150"/>
 ## Master
 
 The master list includes a menu button that toggles the menu open and highlights the current page.
@@ -40,13 +39,19 @@ The data is displayed through an `ion-list` where each `ion-item` is clickable a
 
 Clicking an item routes to the details page using the post’s name as an ID eg. `/t3_v11g7h`
 
+<img src="src/assets/images/master.jpg" alt="master" width="150"/>
+
 ## Detail
 
 The detail page on initiation calls the `master.service.ts` and gets a new individual Reddit call for the particular post. The display shows a back button to the master list. A card displays the author’s name, upVote ratio, and a larger image (if an image is not available a dummy image appears instead). At the bottom of the page, the user is able to click on a button that links to the post on Reddit.
 
+<img src="src/assets/images/detail.jpg" alt="detail" width="150"/>
+
 ## Chat
 
 The chat page is styled like a chat window with the history on top and a text area and send button at the bottom. The first message is a hard-coded dummy that displays on the opposite side for visual effect. When a user sends a message their name (taken dynamically from `user.service.ts`) appears along with the current time.
+
+<img src="src/assets/images/chat.jpg" alt="chat" width="150"/>
 
 ## The Custom Component
 
@@ -57,5 +62,7 @@ For more information on how to install this custom component on any app visit:
 [npm!](https://www.npmjs.com/package/initial-components-ori)
 
 [GitHub!](https://github.com/AltaraceO/stencil_components)
+
+<img src="src/assets/images/custom.jpg" alt="custom" width="150"/>
 
 ## Thanks
